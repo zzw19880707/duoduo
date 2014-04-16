@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+#import "Reachability.h"
+@class MainViewController;
+@interface AppDelegate : UIResponder <UIApplicationDelegate>{
+    Reachability *hostReach;
+}
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property (strong, nonatomic) MainViewController *mainVC;
 @end
