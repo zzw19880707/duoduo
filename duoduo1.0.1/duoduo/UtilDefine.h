@@ -90,7 +90,7 @@ delegate:nil   \
 cancelButtonTitle:@"确定" \
 otherButtonTitles:nil];  \
 [alert show];  \
-[alert release];
+
 #endif
 
 
