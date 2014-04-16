@@ -1,24 +1,25 @@
 //
-//  TenyeaBaseViewController.m
+//  TenyeaBaseTableViewController.m
 //  duoduo
 //
-//  Created by tenyea on 14-3-25.
+//  Created by tenyea on 14-4-11.
 //  Copyright (c) 2014年 zzw. All rights reserved.
 //
 
-#import "TenyeaBaseViewController.h"
+#import "TenyeaBaseTableViewController.h"
 #import "AFHTTPRequestOperationManager.h"
-//#import "BaiduMobStat.h"
-@interface TenyeaBaseViewController ()
+
+@interface TenyeaBaseTableViewController ()
 
 @end
 
-@implementation TenyeaBaseViewController
+@implementation TenyeaBaseTableViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithStyle:(UITableViewStyle)style
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithStyle:style];
     if (self) {
+        // Custom initialization
     }
     return self;
 }
@@ -26,8 +27,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    
     NSArray *viewControllers = self.navigationController.viewControllers;
     if (self.isCancelButton) {
         //        UIBarButtonItem *cancelItem=[[UIBarButtonItem alloc]initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(cencel)];
@@ -59,15 +58,44 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+#warning Potentially incomplete method implementation.
+    // Return the number of sections.
+    return 0;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+#warning Incomplete method implementation.
+    // Return the number of rows in the section.
+    return 0;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    // Configure the cell...
+    
+    return cell;
+}
+
+
 -(void)viewWillAppear:(BOOL)animated{
-//    NSString *cName  = [NSString stringWithFormat:@"%@",self.tabBarItem.title ,nil];
-//    [[BaiduMobStat defaultStat] pageviewStartWithName:cName];
+    //    NSString *cName  = [NSString stringWithFormat:@"%@",self.tabBarItem.title ,nil];
+    //    [[BaiduMobStat defaultStat] pageviewStartWithName:cName];
     [super viewWillAppear:animated];
 }
 -(void)viewWillDisappear:(BOOL)animated{
-//    NSString *cName  = [NSString stringWithFormat:@"%@",self.tabBarItem.title ,nil];
-//    [[BaiduMobStat defaultStat] pageviewEndWithName:cName];
+    //    NSString *cName  = [NSString stringWithFormat:@"%@",self.tabBarItem.title ,nil];
+    //    [[BaiduMobStat defaultStat] pageviewEndWithName:cName];
     [super viewWillDisappear:animated];
 }
 -(AppDelegate *)appDelegate{
@@ -122,7 +150,7 @@
     HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
 	[self.navigationController.view addSubview:HUD];
 	
-//	HUD.delegate = self;
+    //	HUD.delegate = self;
     if (title) {
         HUD.labelText = title;
     }else {
@@ -138,5 +166,6 @@
 }
 #pragma mark -
 #pragma mark Delegate
+
 
 @end

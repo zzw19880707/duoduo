@@ -1,8 +1,8 @@
 //
-//  TenyeaBaseViewController.h
+//  TenyeaBaseTableViewController.h
 //  duoduo
 //
-//  Created by tenyea on 14-3-25.
+//  Created by tenyea on 14-4-11.
 //  Copyright (c) 2014年 zzw. All rights reserved.
 //
 
@@ -10,8 +10,9 @@
 #import "AppDelegate.h"
 #import "AFHTTPRequestOperation.h"
 #import "MBProgressHUD.h"
-@interface TenyeaBaseViewController : UIViewController{
-//    加载框
+@interface TenyeaBaseTableViewController : UITableViewController{
+
+    //    加载框
     MBProgressHUD *HUD;
 }
 
@@ -27,6 +28,7 @@
 #pragma mark property
 //取消按钮
 @property (nonatomic,assign)BOOL isCancelButton;
+
 
 
 @end
